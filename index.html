@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best cars world | Elite Global Automotive Showroom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LIGHT / DARK MODE FAB -->
+    <button id="theme-toggle-fab" aria-label="Toggle system layout display theme">🌓</button>
+
+    <!-- RESPONSIVE NAVBAR -->
+    <header>
+        <a href="#" class="logo" id="brand-home-trigger"> Best cars world</a>
+        
+        <!-- Hamburger Trigger Input -->
+        <input type="checkbox" id="menu-bar-trigger" class="menu-checkbox">
+        <label for="menu-bar-trigger" class="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <nav class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link home-view-trigger">Home</a></li>
+                
+                <!-- ADVANCED CLICK-TOGGLE MOBILE ACCORDION RE-ENGINEERING -->
+                <li class="nav-dropdown-wrapper">
+                    <input type="checkbox" id="mobile-submenu-toggle-checkbox" class="submenu-toggle-trigger">
+                    <label for="mobile-submenu-toggle-checkbox" class="nav-link dropdown-label-text">Type of Cars ▾</label>
+                    <ul class="dropdown-panel-menu" id="automotive-category-nav"></ul>
+                </li>
+                
+                <li><a href="#" class="nav-link text-routing-trigger" data-page="about">About Us</a></li>
+                <li><a href="#" class="nav-link text-routing-trigger" data-page="contact">Contact</a></li>
+                <li><a href="#" class="nav-link text-routing-trigger" data-page="privacy">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ADMIN LIVE INDICATOR BANNER LAYER -->
+        <div id="admin-session-active-indicator">
+            ⚡ SECURE ADMIN SESSION ACTIVE • MANAGEMENT CONTROLS ENABLED
+        </div>
+
+        <!-- SECTION 1: SYSTEM VISUAL SHOWCASE HERO -->
+        <section class="hero-section" id="brand-visual-showcase-hero">
+            <div class="hero-text-layer">
+                <h2>Best cars world</h2>
+                <p>Discover the finest automotive global premium directories, tailored specifications, and competitive localized pricing structures.</p>
+            </div>
+            <div class="car-image-container">
+                <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80" alt="Premium Performance Luxury Vehicle">
+            </div>
+        </section>
+
+        <!-- DATA VIEWS WORKSPACE MAIN FRAME -->
+        <div class="section-container">
+            <div class="section-title" id="grid-context-heading">Global Markets & Standards</div>
+            <div id="central-viewport-switchbox">
+                <div class="dynamic-display-grid" id="main-content-injection-grid"></div>
+            </div>
+        </div>
+
+        <!-- INLINE SECTION: USED SECOND HAND STATE RECRUITMENT PANELS -->
+        <section class="section-container" id="regional-indian-states-section" style="padding-top: 0;">
+            <div class="section-title">📍 Used / Second-Hand Cars by Indian State</div>
+            <div class="state-filter-row" id="indian-state-chips-container"></div>
+        </section>
+
+        <!-- MARKET COMPLIANCE PARAMETERS CHIPS -->
+        <section class="section-container" id="global-budget-matrix-section" style="padding-top: 0;">
+            <div class="section-title">💰 Budget Cars by Country</div>
+            <div class="budget-grid" id="global-budget-cards-injector"></div>
+        </section>
+
+        <!-- SECTION 4: EDITORIAL FAQ DESK -->
+        <section class="section-container" id="editorial-faq-accordion-section" style="padding-top: 0;">
+            <div class="section-title">❓ Frequently Asked Questions – Best Cars Worldwide</div>
+            <div class="faq-wrapper">
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-1" class="faq-input">
+                    <label for="faq-1" class="faq-label">🇮🇳 What are the best budget cars in India?</label>
+                    <div class="faq-content">Top reliable choices under Indian road parameters include modular hatchbacks and sub-compact passenger cars with optimized local parts pipelines engineered for maximum fuel mileage across rough road systems.</div>
+                </div>
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-2" class="faq-input">
+                    <label for="faq-2" class="faq-label">🇺🇸 What are the best budget cars in the USA?</label>
+                    <div class="faq-content">American market choices under $20,000 strongly prioritize advanced standard driver assistance suites, long structural warranty periods, and compact highway commuter profiles displaying high residual resale indices.</div>
+                </div>
+            </div>
+            <div class="disclaimer-box">
+                <strong>Disclaimer:</strong> All automotive values, prices, technical specifications, and features mentioned across this website environment serve purely generalized tracking purposes. Final metrics vary dynamically across local dealer checkpoints.
+            </div>
+        </section>
+    </main>
+
+    <!-- ADMIN PANEL OVERLAY INTERFACE FORM CONTAINER -->
+    <div id="admin-panel-overlay" class="admin-modal-backdrop">
+        <div class="admin-panel-surface">
+            <div class="admin-panel-header">
+                <h3>🛠️ Best cars world - Inventory Panel</h3>
+                <button id="admin-close-btn" class="admin-btn-close">×</button>
+            </div>
+            
+            <div style="margin-bottom: 25px; border: 1px solid var(--border-stroke); border-radius: 8px; overflow: hidden;">
+                <button type="button" id="toggle-audit-logs-btn" style="width: 100%; background: #22314d; color: var(--accent-gold); border: none; padding: 12px 14px; font-weight: 700; font-size: 13px; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                    <span>📋 View Admin Activity & History Logs</span>
+                    <span id="logs-chevron-indicator">▼</span>
+                </button>
+                <div id="admin-audit-logs-collapsible-panel" style="display: none; background: rgba(0,0,0,0.25); padding: 15px; max-height: 140px; overflow-y: auto; font-family: monospace; font-size: 11px; color: var(--text-muted); line-height: 1.6; border-top: 1px solid var(--border-stroke);"></div>
+            </div>
+
+            <div style="margin-bottom: 25px; border: 1px dashed var(--accent-gold); background: rgba(0,0,0,0.15); border-radius: 8px; padding: 20px;">
+                <h4 style="margin: 0 0 12px 0; color: var(--accent-gold); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">🔒 System Portal Credential Management</h4>
+                <form id="admin-credential-update-form" style="display: flex; flex-direction: column; gap: 12px;">
+                    <div class="form-input-row" style="margin-bottom: 0;">
+                        <div class="form-field" style="margin-bottom: 0;">
+                            <label style="font-size: 11px;">New Operator ID</label>
+                            <input type="text" id="new-admin-username" placeholder="Leave blank to keep current">
+                        </div>
+                        <div class="form-field" style="margin-bottom: 0;">
+                            <label style="font-size: 11px;">New Security Keyphrase</label>
+                            <input type="password" id="new-admin-password" placeholder="Leave blank to keep current">
+                        </div>
+                    </div>
+                    <button type="submit" class="admin-form-submit-btn" style="background: transparent; color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 8px 14px; font-size: 12px; margin-top: 5px;">Apply Global Credential Changes</button>
+                </form>
+            </div>
+
+            <form id="admin-car-entry-form">
+                <input type="hidden" id="form-car-id-pointer" value="">
+                <div class="form-input-row">
+                    <div class="form-field">
+                        <label for="car-name">Vehicle Model Name</label>
+                        <input type="text" id="car-name" required placeholder="e.g., Porsche 911 GT3 RS">
+                    </div>
+                    <div class="form-field">
+                        <label for="car-brand-badge">Badge Label Text</label>
+                        <input type="text" id="car-brand-badge" required placeholder="e.g., Luxury Performance | Germany">
+                    </div>
+                </div>
+                <div class="form-input-row">
+                    <div class="form-field">
+                        <label for="car-country">Country Origin</label>
+                        <select id="car-country" required>
+                            <option value="USA">🇺🇸 United States</option>
+                            <option value="IND">🇮🇳 India</option>
+                            <option value="GBR">🇬🇧 United Kingdom</option>
+                            <option value="DEU">🇩🇪 Germany</option>
+                            <option value="ITA">🇮🇹 Italy</option>
+                            <option value="ARE">🇦🇪 United Arab Emirates (Dubai)</option>
+                            <option value="JPN">🇯🇵 Japan</option>
+                            <option value="KOR">🇰🇷 South Korea</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="car-price">Numerical Retail Price</label>
+                        <input type="number" id="car-price" required placeholder="e.g., 248000">
+                    </div>
+                </div>
+                <div class="form-input-row">
+                    <div class="form-field">
+                        <label for="car-currency">Currency Character Symbol</label>
+                        <input type="text" id="car-currency" required placeholder="€" maxlength="3">
+                    </div>
+                    <div class="form-field">
+                        <label for="car-specs">Technical Specifications Profile Summary</label>
+                        <input type="text" id="car-specs" required placeholder="e.g., 518 hp • 4.0L Flat-6">
+                    </div>
+                </div>
+                
+                <div class="form-input-row" style="background: rgba(0,0,0,0.15); padding: 15px; border-radius: 8px; border: 1px dashed var(--border-stroke); flex-direction: column; gap: 12px; margin-bottom: 18px;">
+                    <div class="form-field" style="width: 100%; margin-bottom: 0;">
+                        <label for="car-image">Option A: Product Image Web URL Link</label>
+                        <input type="url" id="car-image" placeholder="https://images.unsplash.com/...">
+                    </div>
+                    <div style="text-align: center; font-size: 11px; font-weight: 800; color: var(--accent-gold); letter-spacing: 1px; width: 100%;">-- OR --</div>
+                    <div class="form-field" style="width: 100%; margin-bottom: 0;">
+                        <label for="car-file-upload" style="color: var(--text-primary);">Option B: Choose File From Device Storage</label>
+                        <input type="file" id="car-file-upload" accept="image/*" style="padding: 8px;">
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label for="car-state">Indian Distribution State (Second-Hand Module Only)</label>
+                    <select id="car-state">
+                        <option value="">-- Non-Indian / Brand New Showroom Car --</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Delhi">Delhi NCR</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Haryana">Haryana</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="car-desc">Detailed Showroom Description</label>
+                    <textarea id="car-desc" required rows="3" placeholder="Describe mechanical assets..."></textarea>
+                </div>
+                <div class="form-field">
+                    <label style="margin-bottom: 8px; display:block;">Check Class Categorization Alignment Tags</label>
+                    <div class="form-checkbox-group" id="form-category-checkbox-injection"></div>
+                </div>
+                <div style="display:flex; gap:15px;">
+                    <button type="submit" class="admin-form-submit-btn" id="form-submit-action-label" style="flex:2;">Commit Vehicle to Inventory</button>
+                    <button type="button" class="admin-form-submit-btn" id="admin-logout-btn" style="background:#dc2626; color:#fff; flex:1;">Logout</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- AUTH SEGMENT MODAL -->
+    <div id="auth-gateway-overlay" class="admin-modal-backdrop">
+        <div class="admin-panel-surface" style="max-width: 400px; padding: 30px;">
+            <div class="admin-panel-header" style="margin-bottom:20px;">
+                <h3>🔐 Operator Gate Authorization</h3>
+                <button id="auth-close-btn" class="admin-btn-close">×</button>
+            </div>
+            <form id="secure-auth-form">
+                <div class="form-field">
+                    <label for="auth-username">Operator ID</label>
+                    <input type="text" id="auth-username" required autocomplete="off">
+                </div>
+                <div class="form-field" style="position: relative;">
+                    <label for="auth-password">Security Keyphrase</label>
+                    <input type="password" id="auth-password" required>
+                    <span id="password-visibility-toggle">Show</span>
+                </div>
+                <div id="auth-error-feedback">❌ Access Denied: Incorrect login parameters.</div>
+                <button type="submit" class="admin-form-submit-btn">Verify Gate Signature</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PREMIUM FOOTER COMPONENT -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Best cars world</h4>
+                <p>Your premium worldwide automotive platform indexing localized specifications, market evaluations, and pre-owned vehicle pipelines across global distribution clusters.</p>
+                <div class="social-icon-wrapper-row">
+                    <a href="https://facebook.com" target="_blank" class="social-icon-link" aria-label="Facebook Link">📘</a>
+                    <a href="https://twitter.com" target="_blank" class="social-icon-link" aria-label="X Twitter Link">🐦</a>
+                    <a href="https://instagram.com" target="_blank" class="social-icon-link" aria-label="Instagram Link">📸</a>
+                    <a href="https://youtube.com" target="_blank" class="social-icon-link" aria-label="YouTube Link">📺</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Automotive Core Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="home-view-trigger">Showroom Home</a></li>
+                    <li><a href="#" class="footer-cat-shortcut" data-category="Luxury Cars">Luxury Segment</a></li>
+                    <li><a href="#" class="footer-cat-shortcut" data-category="Used Cars">Used / Second Hand</a></li>
+                    <li><a href="#" class="footer-cat-shortcut" data-category="EV Cars">Electric Mobility</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal & Support Information</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="text-routing-trigger" data-page="about">About Corporate Profile</a></li>
+                    <li><a href="#" class="text-routing-trigger" data-page="contact">Contact Communications</a></li>
+                    <li><a href="#" class="text-routing-trigger" data-page="privacy">Privacy Regulations</a></li>
+                    <li><a href="#" id="secure-backdoor-tap-trigger" style="color:inherit; cursor:default; font-size:11px; opacity:0.4;">© 2026 Node Matrix Console Terminal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 Best cars world Global Search Network. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
