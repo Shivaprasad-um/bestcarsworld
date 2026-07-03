@@ -1,8 +1,4 @@
-/**
- * =================================================================
- * AUTOMOTIVE CORE INVENTORY DATABASE LISTINGS
- * =================================================================
- */
+
 const BASELINE_AUTOMOTIVE_DATABASE = [
     {
         id: "car_w1",
@@ -102,12 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeScrollObserverEngine();
 });
 
-/**
- * =================================================================
- * 🌊 SCROLL OBSERVER CORE LOGIC
- * Re-scans DOM mappings to apply smooth transitions during layout scroll
- * =================================================================
- */
+
 function initializeScrollObserverEngine() {
     const trackingObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
