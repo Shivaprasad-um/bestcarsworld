@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Best cars world | Elite Global Automotive Showroom</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- LIGHT / DARK MODE FAB -->
     <button id="theme-toggle-fab" aria-label="Toggle system layout display theme">🌓</button>
 
-    <!-- RESPONSIVE NAVBAR -->
     <header>
-        <a href="#" class="logo" id="brand-home-trigger"> Best cars world</a>
+        <a href="#" class="logo" id="brand-home-trigger">
+           <img src="images/logo.png" alt="Best Cars World Corporate Identity Logo" class="brand-logo-img" style="border-radius: 8px;">
+        </a>
         
-        <!-- Hamburger Trigger Input -->
         <input type="checkbox" id="menu-bar-trigger" class="menu-checkbox">
         <label for="menu-bar-trigger" class="menu-toggle">
             <span class="bar"></span>
@@ -27,7 +26,6 @@
             <ul class="nav-menu">
                 <li><a href="#" class="nav-link home-view-trigger">Home</a></li>
                 
-                <!-- ADVANCED CLICK-TOGGLE MOBILE ACCORDION RE-ENGINEERING -->
                 <li class="nav-dropdown-wrapper">
                     <input type="checkbox" id="mobile-submenu-toggle-checkbox" class="submenu-toggle-trigger">
                     <label for="mobile-submenu-toggle-checkbox" class="nav-link dropdown-label-text">Type of Cars ▾</label>
@@ -42,12 +40,10 @@
     </header>
 
     <main>
-        <!-- ADMIN LIVE INDICATOR BANNER LAYER -->
         <div id="admin-session-active-indicator">
             ⚡ SECURE ADMIN SESSION ACTIVE • MANAGEMENT CONTROLS ENABLED
         </div>
 
-        <!-- SECTION 1: SYSTEM VISUAL SHOWCASE HERO -->
         <section class="hero-section" id="brand-visual-showcase-hero">
             <div class="hero-text-layer">
                 <h2>Best cars world</h2>
@@ -58,7 +54,6 @@
             </div>
         </section>
 
-        <!-- DATA VIEWS WORKSPACE MAIN FRAME -->
         <div class="section-container">
             <div class="section-title" id="grid-context-heading">Global Markets & Standards</div>
             <div id="central-viewport-switchbox">
@@ -66,28 +61,25 @@
             </div>
         </div>
 
-        <!-- INLINE SECTION: USED SECOND HAND STATE RECRUITMENT PANELS -->
         <section class="section-container" id="regional-indian-states-section" style="padding-top: 0;">
             <div class="section-title">📍 Used / Second-Hand Cars by Indian State</div>
             <div class="state-filter-row" id="indian-state-chips-container"></div>
         </section>
 
-        <!-- MARKET COMPLIANCE PARAMETERS CHIPS -->
         <section class="section-container" id="global-budget-matrix-section" style="padding-top: 0;">
             <div class="section-title">💰 Budget Cars by Country</div>
             <div class="budget-grid" id="global-budget-cards-injector"></div>
         </section>
 
-        <!-- SECTION 4: EDITORIAL FAQ DESK -->
         <section class="section-container" id="editorial-faq-accordion-section" style="padding-top: 0;">
             <div class="section-title">❓ Frequently Asked Questions – Best Cars Worldwide</div>
             <div class="faq-wrapper">
-                <div class="faq-item">
+                <div class="faq-item fade-on-scroll">
                     <input type="checkbox" id="faq-1" class="faq-input">
                     <label for="faq-1" class="faq-label">🇮🇳 What are the best budget cars in India?</label>
                     <div class="faq-content">Top reliable choices under Indian road parameters include modular hatchbacks and sub-compact passenger cars with optimized local parts pipelines engineered for maximum fuel mileage across rough road systems.</div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item fade-on-scroll">
                     <input type="checkbox" id="faq-2" class="faq-input">
                     <label for="faq-2" class="faq-label">🇺🇸 What are the best budget cars in the USA?</label>
                     <div class="faq-content">American market choices under $20,000 strongly prioritize advanced standard driver assistance suites, long structural warranty periods, and compact highway commuter profiles displaying high residual resale indices.</div>
@@ -99,7 +91,6 @@
         </section>
     </main>
 
-    <!-- ADMIN PANEL OVERLAY INTERFACE FORM CONTAINER -->
     <div id="admin-panel-overlay" class="admin-modal-backdrop">
         <div class="admin-panel-surface">
             <div class="admin-panel-header">
@@ -108,14 +99,14 @@
             </div>
             
             <div style="margin-bottom: 25px; border: 1px solid var(--border-stroke); border-radius: 8px; overflow: hidden;">
-                <button type="button" id="toggle-audit-logs-btn" style="width: 100%; background: #22314d; color: var(--accent-gold); border: none; padding: 12px 14px; font-weight: 700; font-size: 13px; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                <button type="button" id="toggle-audit-logs-btn" style="width: 100%; background: var(--bg-card); color: var(--accent-gold); border: none; padding: 12px 14px; font-weight: 700; font-size: 13px; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
                     <span>📋 View Admin Activity & History Logs</span>
                     <span id="logs-chevron-indicator">▼</span>
                 </button>
-                <div id="admin-audit-logs-collapsible-panel" style="display: none; background: rgba(0,0,0,0.25); padding: 15px; max-height: 140px; overflow-y: auto; font-family: monospace; font-size: 11px; color: var(--text-muted); line-height: 1.6; border-top: 1px solid var(--border-stroke);"></div>
+                <div id="admin-audit-logs-collapsible-panel" style="display: none; background: rgba(0,0,0,0.02); padding: 15px; max-height: 140px; overflow-y: auto; font-family: monospace; font-size: 11px; color: var(--text-muted); line-height: 1.6; border-top: 1px solid var(--border-stroke);"></div>
             </div>
 
-            <div style="margin-bottom: 25px; border: 1px dashed var(--accent-gold); background: rgba(0,0,0,0.15); border-radius: 8px; padding: 20px;">
+            <div style="margin-bottom: 25px; border: 1px dashed var(--accent-gold); background: rgba(0,0,0,0.01); border-radius: 8px; padding: 20px;">
                 <h4 style="margin: 0 0 12px 0; color: var(--accent-gold); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">🔒 System Portal Credential Management</h4>
                 <form id="admin-credential-update-form" style="display: flex; flex-direction: column; gap: 12px;">
                     <div class="form-input-row" style="margin-bottom: 0;">
@@ -174,7 +165,7 @@
                     </div>
                 </div>
                 
-                <div class="form-input-row" style="background: rgba(0,0,0,0.15); padding: 15px; border-radius: 8px; border: 1px dashed var(--border-stroke); flex-direction: column; gap: 12px; margin-bottom: 18px;">
+                <div class="form-input-row" style="background: rgba(0,0,0,0.02); padding: 15px; border-radius: 8px; border: 1px dashed var(--border-stroke); flex-direction: column; gap: 12px; margin-bottom: 18px;">
                     <div class="form-field" style="width: 100%; margin-bottom: 0;">
                         <label for="car-image">Option A: Product Image Web URL Link</label>
                         <input type="url" id="car-image" placeholder="https://images.unsplash.com/...">
@@ -217,7 +208,6 @@
         </div>
     </div>
 
-    <!-- AUTH SEGMENT MODAL -->
     <div id="auth-gateway-overlay" class="admin-modal-backdrop">
         <div class="admin-panel-surface" style="max-width: 400px; padding: 30px;">
             <div class="admin-panel-header" style="margin-bottom:20px;">
@@ -240,7 +230,6 @@
         </div>
     </div>
 
-    <!-- PREMIUM FOOTER COMPONENT -->
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
