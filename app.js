@@ -1,5 +1,7 @@
 /**
- * MASTER DATABASE DECK - HIGH SIGNAL AUTOMOTIVE RECORD NODES
+ * =================================================================
+ * AUTOMOTIVE CORE INVENTORY DATABASE LISTINGS
+ * =================================================================
  */
 const BASELINE_AUTOMOTIVE_DATABASE = [
     {
@@ -81,7 +83,6 @@ const GLOBAL_BUDGETS = [
     { country: "KOR", budget: 80000000, label: "🇰🇷 South Korea Under ₩80,000,000" }
 ];
 
-// APP RUNTIME CENTRAL STATES
 let AppState = {
     isAdmin: false,
     lastQueryTitle: "Global Markets & Standards",
@@ -98,7 +99,35 @@ document.addEventListener("DOMContentLoaded", () => {
     renderDefaultMarketGrid();
     setupApplicationEventHandlers();
     initializeSystemThemeHandler();
+    initializeScrollObserverEngine();
 });
+
+/**
+ * =================================================================
+ * 🌊 SCROLL OBSERVER CORE LOGIC
+ * Re-scans DOM mappings to apply smooth transitions during layout scroll
+ * =================================================================
+ */
+function initializeScrollObserverEngine() {
+    const trackingObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Optional: stop un-observing to allow repeating trigger actions
+                // trackingObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.05,
+        rootMargin: "0px 0px -40px 0px"
+    });
+
+    document.querySelectorAll('.fade-on-scroll, .country-card, .budget-card').forEach(card => {
+        card.classList.add('fade-on-scroll');
+        trackingObserver.observe(card);
+    });
+}
 
 function appendSystemAuditRecord(logMessageText) {
     const timestamp = new Date().toLocaleTimeString();
@@ -113,10 +142,10 @@ function refreshLogsTerminalDisplay() {
     const box = document.getElementById("admin-audit-logs-collapsible-panel");
     if(!box) return;
     if(SYSTEM_AUDIT_LOGS.length === 0) {
-        box.innerHTML = "<div>&bull; No log activity tracked in this execution yet.</div>";
+        box.innerHTML = "<div>• No log activity tracked in this execution yet.</div>";
         return;
     }
-    box.innerHTML = SYSTEM_AUDIT_LOGS.map(line => `<div>&bull; ${line}</div>`).join("");
+    box.innerHTML = SYSTEM_AUDIT_LOGS.map(line => `<div>• ${line}</div>`).join("");
 }
 
 function renderInterfaceMenus() {
@@ -162,6 +191,9 @@ function renderDefaultMarketGrid() {
             <a href="#" class="explore-btn market-explore-action" data-country="${item.countryCode}">Explore Market</a>
         </div>
     `).join("");
+
+    // Refresh scroll anchors
+    setTimeout(initializeScrollObserverEngine, 50);
 }
 
 function renderFilteredVehiclesGrid(titleContextText, targetCollection) {
@@ -184,12 +216,12 @@ function renderFilteredVehiclesGrid(titleContextText, targetCollection) {
             <div>
                 <div class="country-meta" style="cursor:pointer;" onclick="renderSingleProductDeepDive('${car.id}')">${car.badge}</div>
                 <h3 style="margin: 0 0 5px 0; cursor:pointer;" onclick="renderSingleProductDeepDive('${car.id}')">${car.name}</h3>
-                ${car.indianState ? `<div style="font-size:11px; font-weight:700; color:var(--accent-gold); margin-bottom:5px;">📍 State Node: ${car.indianState}</div>` : ''}
+                ${car.indianState ? `<div style="font-size:11px; font-weight:700; color:var(--text-primary); margin-bottom:5px;">📍 State Node: ${car.indianState}</div>` : ''}
                 <div style="font-size:12px; color:var(--text-muted); font-weight:700; margin-bottom:12px;">${car.specs}</div>
                 <p style="margin-bottom:15px; font-size:13.5px; display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">${car.description}</p>
             </div>
             <div>
-                <div style="font-size:22px; font-weight:800; margin-bottom:15px; color:var(--accent-gold);">${car.currencySign}${car.priceLocal.toLocaleString()}</div>
+                <div style="font-size:20px; font-weight:800; margin-bottom:15px; color:var(--text-primary); letter-spacing:-0.5px;">${car.currencySign}${car.priceLocal.toLocaleString()}</div>
                 <div style="display:flex; gap:10px; align-items:center;">
                     <button class="explore-btn" style="flex:1; padding:8px 0;" onclick="renderSingleProductDeepDive('${car.id}')">View Details</button>
                     ${AppState.isAdmin ? `
@@ -200,6 +232,8 @@ function renderFilteredVehiclesGrid(titleContextText, targetCollection) {
             </div>
         </div>
     `).join("");
+
+    setTimeout(initializeScrollObserverEngine, 50);
 }
 
 function renderSingleProductDeepDive(carId) {
@@ -216,16 +250,16 @@ function renderSingleProductDeepDive(carId) {
     
     container.innerHTML = `
         <div style="grid-column: 1/-1; background: var(--bg-card); border: 1px solid var(--border-stroke); border-radius: 12px; padding: 40px; display: flex; flex-direction: column; gap: 30px;">
-            <div style="width:100%; max-height:450px; overflow:hidden; border-radius:8px; border:1px solid var(--border-stroke); display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.15);">
+            <div style="width:100%; max-height:450px; overflow:hidden; border-radius:8px; border:1px solid var(--border-stroke); display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.005);">
                 <img src="${car.imgUrl}" style="max-width:100%; max-height:450px; object-fit:contain;" alt="Deep Dive Focus Asset">
             </div>
             <div>
                 <div class="country-meta" style="font-size:13px; margin-bottom:5px;">${car.badge}</div>
                 <h2 style="margin:0 0 15px 0; font-size:32px; font-weight:800; color:var(--text-primary);">${car.name}</h2>
                 
-                <div style="background:var(--bg-main); padding:20px; border-radius:8px; border-left:4px solid var(--accent-gold); margin-bottom:25px;">
+                <div style="background:var(--bg-main); padding:20px; border-radius:8px; border-left:2px solid var(--text-primary); margin-bottom:25px;">
                     <h4 style="margin:0 0 8px 0; text-transform:uppercase; font-size:12px; color:var(--text-muted); letter-spacing:1px;">Technical Blueprint Specifications</h4>
-                    <p style="margin:0; font-size:16px; font-weight:700; color:var(--accent-gold);">${car.specs}</p>
+                    <p style="margin:0; font-size:16px; font-weight:700; color:var(--text-primary);">${car.specs}</p>
                 </div>
 
                 <h4 style="text-transform:uppercase; font-size:12px; color:var(--text-muted); letter-spacing:1px; margin-bottom:8px;">Full Overview Report</h4>
@@ -234,11 +268,11 @@ function renderSingleProductDeepDive(carId) {
                 <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-stroke); padding-top:25px; flex-wrap:wrap; gap:20px;">
                     <div>
                         <span style="font-size:13px; color:var(--text-muted); display:block; text-transform:uppercase; font-weight:600;">Showroom Base Valuation</span>
-                        <span style="font-size:36px; font-weight:900; color:var(--text-primary);">${car.currencySign}${car.priceLocal.toLocaleString()}</span>
+                        <span style="font-size:32px; font-weight:900; color:var(--text-primary); letter-spacing:-1px;">${car.currencySign}${car.priceLocal.toLocaleString()}</span>
                     </div>
                     <div style="display:flex; gap:12px;">
                         <button class="explore-btn" onclick="renderReturnHomeDefaultContext()" style="background:var(--border-stroke)">← Back to Grid</button>
-                        <a href="https://maps.google.com" target="_blank" class="explore-btn" style="background:var(--accent-gold); color:#0f172a; font-weight:700;">Secure Vehicle Location Node</a>
+                        <a href="https://maps.google.com" target="_blank" class="explore-btn" style="background:var(--text-primary); color:var(--bg-main); font-weight:700;">Secure Vehicle Location Node</a>
                     </div>
                 </div>
             </div>
@@ -259,9 +293,6 @@ function renderReturnHomeDefaultContext() {
     }
 }
 
-/**
- IRREVERSIBLE CRYPTOGRAPHIC ONE-WAY FINGERPRINT HASH ENGINE Absolutely zero plaintext codes or ASCII sequences are present.
- */
 function computeSecureSystemFingerprint(inputString) {
     let registerA = 0x67452301;
     let registerB = 0xEFCDAB89;
@@ -279,25 +310,19 @@ function computeSecureSystemFingerprint(inputString) {
     return blockA.toString(16) + "_" + blockB.toString(16);
 }
 
-/**
- * DIRECT SYSTEM BYPASS MATRIX (FIXES PASSWORD GLITCH INSTANTLY)
- */
 function checkSystemHardwareHandshake(inputUser, inputPass) {
-    const userClean = inputUser.replace(/\s+/g, '');
+    const userClean = inputUser.replace(/\s+/g, '').trim();
     const passClean = inputPass.trim();
 
-    // Directly matches plain text first, or checks custom settings if you change it later
     const hasCustomUser = localStorage.getItem("best_cars_admin_user_hash");
     const hasCustomPass = localStorage.getItem("best_cars_admin_pass_hash");
 
     if (hasCustomUser || hasCustomPass) {
-        // If you successfully change the password later, it uses this secure tracking
         const activeUserToken = localStorage.getItem("best_cars_admin_user_hash");
         const activePassToken = localStorage.getItem("best_cars_admin_pass_hash");
         return (computeSecureSystemFingerprint(userClean) === activeUserToken && computeSecureSystemFingerprint(passClean) === activePassToken);
     }
 
-    // Baseline plain-text check (Bypasses local character breaking errors completely)
     return (userClean === "adminv" && passClean === "Vish$@354");
 }
 
@@ -328,7 +353,6 @@ function setupApplicationEventHandlers() {
         }
     });
 
-    // Dynamic credentials modifier hook processing
     credChangeForm.addEventListener("submit", function(e) {
         e.preventDefault();
         if(!AppState.isAdmin) return;
@@ -419,10 +443,10 @@ function setupApplicationEventHandlers() {
         e.preventDefault();
         const inputParamA = document.getElementById("auth-username").value;
         const inputParamB = passInput.value;
-        document.getElementById("auth-username").value = "";
-        passInput.value = "";
 
         if (checkSystemHardwareHandshake(inputParamA, inputParamB)) {
+            document.getElementById("auth-username").value = "";
+            passInput.value = "";
             AppState.isAdmin = true;
             authOverlay.style.display = "none";
             document.getElementById("admin-session-active-indicator").style.display = "block";
@@ -595,5 +619,5 @@ function initializeSystemThemeHandler() {
         document.documentElement.setAttribute("data-theme", next);
         localStorage.setItem("automotive-theme", next);
     });
-    document.documentElement.setAttribute("data-theme", localStorage.getItem("automotive-theme") || "dark");
+    document.documentElement.setAttribute("data-theme", localStorage.getItem("automotive-theme") || "light");
 }
